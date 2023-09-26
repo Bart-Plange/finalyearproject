@@ -1,0 +1,29 @@
+/* ul{
+    position: relative;
+}
+
+li:hover::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 45px;
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    background: #f0eaea98;
+    animation: animate 600ms;
+}
+@keyframes animate {
+    from{
+        width: 0px;
+        
+    }
+    to{
+        width: 45px;
+        transform: scale(0.4);
+    }
+} */
+
+.logoImg{
+    width: 90px;
+}

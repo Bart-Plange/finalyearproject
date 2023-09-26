@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Nanum+Gothic&family=Rammetto+One&family=Tilt+Prism&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+    background: #0d0d29;
+    /* background: linear-gradient(145.7deg, #07011d 7.61%, rgba(9, 4, 26, 0) 79.73%),
+    linear-gradient(229.74deg, #0f1101 9.39%, rgba(158, 15, 58, 0) 83.29%),
+    linear-gradient(83.06deg, #14082f 2.35%, #0b031d 94.92%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+.herobg{
+    background: url(./assets/heroBg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    font-family: 'Tilt Prism', cursive;
+}
+
+.container{
+    padding: 4% 10%;
+}
+.container::after{
+    content: '';
+    border: 1px solid #3a3838;
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+/* signin page styling */
+.SignIn p::before{
+    content: 'Sign In';
+    position: absolute;
+    top: -150%;
+    left: 0;
+    opacity: 0.3;
+    font-size: 3rem;
+    color: blueviolet;
+}
+/* signup page styling */
+.SignUp p::before{
+    content: 'Sign Up';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    opacity: 0.3;
+    font-size: 3rem;
+    color: blueviolet;
+}
