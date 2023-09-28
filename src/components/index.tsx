@@ -9,5 +9,10 @@ export {default as CarsServices} from './CarsSerives'
 export {default as Services} from './Services'
 export {default as About} from './about/About'
 export {default as Cart} from './Cart'
-export {default as ChatWidget} from './ChatWidget'
+export {default as Chatbot} from './Chatbot'
+export {default as Chat} from './Chat'
+export {default as Contact} from './Contact'
+
+
+
 

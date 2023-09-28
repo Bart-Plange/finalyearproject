@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Booking, Home, LoginPage, Maintenance, ProductPage, RepairPage, SignupPage, TowingCenterPage, TowingMapPage } from './pages';
 import Contact from './components/Contact';
+import { Chat } from './components';
 
 
 const App = () => {
@@ -19,7 +20,8 @@ const App = () => {
           <Route path='/Booking' element={<Booking />} />
           <Route path='/Contact' element={<Contact />} />
          
-        </Routes>
+      </Routes>
+      <Chat />
       </BrowserRouter>
   );
 }

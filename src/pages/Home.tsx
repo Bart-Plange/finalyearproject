@@ -1,4 +1,4 @@
-import { About, HomePage, Cta, CarsServices, Navigation, Services,ChatWidget } from '../components'
+import { About, HomePage, Cta, CarsServices, Navigation, Services} from '../components'
 import Footer from '../components/Footer'
 
 
@@ -11,7 +11,6 @@ const Home = () => {
       <Cta />  
       <About />
       <Services />
-      <ChatWidget />
       <Footer />
     </div>
   )

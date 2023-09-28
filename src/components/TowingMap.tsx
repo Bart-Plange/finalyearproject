@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, CircleMarker, Tooltip }
 import { useState, useMemo } from 'react';
 
 const TowingMap = () => {
-  const center = [51.505, -0.09];
+  const center = [5.614818, -0.205874];
 
   function TooltipCircle() {
     const [clickedCount, setClickedCount] = useState(0);
@@ -45,13 +45,13 @@ const TowingMap = () => {
           />
           <TooltipCircle />
           <CircleMarker
-            center={[51.51, -0.12]}
+            center={[5.6698, -0.01657]}
             pathOptions={{ color: 'red' }}
             radius={20}
           >
             <Tooltip>Tooltip for CircleMarker</Tooltip>
           </CircleMarker>
-          <Marker position={[51.51, -0.09]}>
+          <Marker position={[5.614818, -0.205874]}>
             <Popup>Popup for Marker</Popup>
             <Tooltip>Tooltip for Marker</Tooltip>
           </Marker>
