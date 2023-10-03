@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                 onChange={handleInputChange}
                 placeholder='enter your message'
                 required
-                className="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full mt-1 p-2 border rounded focus:outline-none focus:ring focus:border-blue-300 h-32"
               />
             </div>
         

@@ -74,7 +74,7 @@ const SignupPage = () => {
       <div className='container mx-auto py-6'>
         <div className='text-green-500 flex flex-row gap-4'>
           <img src={backarrow} className='w-8 ' />
-          <Link to={'/home'}>Return Home</Link>
+          <Link to={'/'}>Return Home</Link>
         </div>
         <div className='flex flex-col justify-between lg:space-x-6 lg:flex-row'>
           <div className='lg:w-1/3 my-auto'>

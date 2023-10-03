@@ -6,7 +6,7 @@ import { Navigation } from '../components';
 import Footer from '../components/Footer';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
+import BookImg from '../assets/booking.jpg'
 
 //import functions
 
@@ -23,6 +23,25 @@ const BookingPage: React.FC = () => {
    const [bookingStatus, setBookingStatus] = useState<
     'initial' | 'success' | 'error' | 'network-error'
   >('initial');
+
+  // template - Add more information about the benefits of booking appointments
+  const renderTemplate = () => (
+    <div className='pl-6'>
+      <p className='text-gray-300'>
+        Fill out the form to make your booking with our experienced team.
+      </p>
+      <p className='text-gray-300 py-2'>
+        Enjoy the following benefits of booking with us:
+      </p>
+      <ul className='list-disc text-gray-300 pl-8'>
+        <li className='pt-4'>Expert Service: Our team consists of skilled professionals.</li>
+        <li className='py-4'>Convenient Appointments: Choose your preferred date and time.</li>
+        <li>Quick Responses: Receive confirmation shortly after booking.</li>
+        <li className='pt-4'>Safe & Secure: Your information is kept confidential.</li>
+        {/* Add more benefits as needed */}
+      </ul>
+    </div>
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -266,8 +285,14 @@ const BookingPage: React.FC = () => {
           </div>
                     {/* template */}
           <div className='pl-6'>
-             <p className='text-gray-300'>Fill out the form to make your booking.</p> 
-             <p className='text-gray-300 py-2'>Your information is safe with us.</p> 
+             
+            <p className='text-3xl py-2 text-green-500'>Your information is safe with us.</p> 
+            <div>
+              {renderTemplate()}
+            </div>
+            <div className='pl-8 pt-4'>
+              <img src={BookImg} alt="book img" />
+            </div>
           </div>
       </div>
           </div>

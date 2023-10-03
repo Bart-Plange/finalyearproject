@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem('token', token);
 
       // Redirect to a protected page or perform other actions
-      navigate('/home');
+      navigate('/protectedpage');
     } catch (error) {
       if (axios.isAxiosError(error)) {
         if (error.response) {
@@ -53,7 +53,7 @@ const Login = () => {
       <div className="container mx-auto py-6">
         <div className='text-green-500 flex flex-row gap-4'>
           <img src={backarrow} className='w-8 ' />
-          <Link to={'/home'}>Return Home</Link>
+          <Link to={'/'}>Return Home</Link>
         </div>
         <div className='flex md:flex-row flex-col-reverse justify-between'>
           <div className='SignIn'>

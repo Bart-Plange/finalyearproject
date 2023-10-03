@@ -1,3 +1,4 @@
+//CartCounter.tsx
 import React from 'react';
 
 interface CartCounterProps {

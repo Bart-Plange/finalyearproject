@@ -1,10 +1,35 @@
+//ProductPage.tsx
 import './product.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Navigation, Product, Cart } from '../../components';
-import { Airfilter, Beams, Beams1, Beams2, Beams3, Bulb1, Bulb2, Bulbs, Engines, Engines1, Fuelfilter, Fuelpump, Fuelpump1, Fuelpump2, Gearbox, Gearbox1, Headlight, Sparkplugs, Sparkplugs1, Sparkplugs2, Starter, Tracking } from './data'; // Import the image
+import { Navigation, Product, Cart, Loading } from '../../components';
+import {
+  Airfilter,
+  Beams,
+  Beams1,
+  Beams2,
+  Beams3,
+  Bulb1,
+  Bulb2,
+  Bulbs,
+  Engines,
+  Engines1,
+  Fuelfilter,
+  Fuelpump,
+  Fuelpump1,
+  Fuelpump2,
+  Gearbox,
+  Gearbox1,
+  Headlight,
+  Sparkplugs,
+  Sparkplugs1,
+  Sparkplugs2,
+  Starter,
+  Tracking,
+} from './data'; // Import the image
 import Footer from '../../components/Footer';
 import CartCounter from '../../components/CartCounter';
+
 
 const products = [
   {
@@ -90,46 +115,56 @@ const products = [
 
 
 const ProductPage: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [cart, setCart] = useState<typeof Product[]>([]);
 
+  // Simulate loading for 2 seconds
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   function addToCart(product: typeof Product): void {
-    setCart(prevCart => [...prevCart, product]);
+    setCart((prevCart) => [...prevCart, product]);
   }
 
   function removeFromCart(productId: string): void {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   }
 
-  const cartCounter = cart.length
+  const cartCounter = cart.length;
 
   return (
     <div className=''>
       <Navigation />
-      <div className='container'>
-        {/* ... */}
-        {/* Render the Cart component and pass the cart state */}
-        <Cart cart={cart} removeFromCart={removeFromCart} />
-        <CartCounter count={cartCounter} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <motion.div
-              key={product.id}
-              whileHover={{ scale: 1.02 }}
-              className="hover:shadow-lg transition duration-300 ease-in-out"
-            >   
-              <Product
-                id={product.id}
-                name={product.name}
-                description={product.description}
-                prices={product.prices}
-                images={product.image}
-                addToCart={addToCart}
-              />
-            </motion.div>
-          ))}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className='container'>
+          {/* Render the Cart component and pass the cart state */}
+          <Cart cart={cart} removeFromCart={removeFromCart} />
+          <CartCounter count={cartCounter} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <motion.div
+                key={product.id}
+                whileHover={{ scale: 1.02 }}
+                className="hover:shadow-lg transition duration-300 ease-in-out"
+              >
+                <Product
+                  id={product.id}
+                  name={product.name}
+                  description={product.description}
+                  prices={product.prices}
+                  images={product.image}
+                  addToCart={addToCart}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
-
-      </div>
+      )}
       <Footer />
     </div>
   );

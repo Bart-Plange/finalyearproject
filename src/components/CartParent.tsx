@@ -1,4 +1,4 @@
-// CartParent.js
+// CartParent.tsx
 import Cart from './Cart'; 
 
 function CartParent() {
